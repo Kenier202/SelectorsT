@@ -1,1 +1,22 @@
-<p>selector-page works!</p>
+<h1 class="mt-3">Selector anidados</h1>
+<hr />
+
+<form [formGroup]="myForm">
+  <div class="row mb-3">
+    <div class="col">
+      <label for="" class="form-label">Continente:</label>
+      <select class="form-select" id="continente">
+        <option value="">Seleccione un continente</option>
+        <option value="">America</option>
+        <option value="">Europa</option>
+        <option value="">Asia</option>
+        <option value="">Africa</option>
+      </select>
+    </div>
+  </div>
+</form>
+
+<h3>formulario</h3>
+<code>
+  {{ myForm.value | json }}
+</code>
