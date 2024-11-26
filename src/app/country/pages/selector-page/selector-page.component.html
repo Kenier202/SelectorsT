@@ -5,12 +5,23 @@
   <div class="row mb-3">
     <div class="col">
       <label for="" class="form-label">Continente:</label>
-      <select class="form-select" id="continente">
+      <select formControlName="region" class="form-select" id="continente">
         <option value="">Seleccione un continente</option>
-        <option value="">America</option>
-        <option value="">Europa</option>
-        <option value="">Asia</option>
-        <option value="">Africa</option>
+        <option *ngFor="let region of regions" [value]="region">
+          {{ region }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <label for="" class="form-label">Pais:</label>
+      <select formControlName="country" class="form-select" id="country">
+        <option value="">Seleccione un pais</option>
+        <!-- <option *ngFor="let region of regions" [value]="region">
+          {{ region }}
+        </option> -->
       </select>
     </div>
   </div>
@@ -20,3 +31,4 @@
 <code>
   {{ myForm.value | json }}
 </code>
+<p>is form valid: {{ myForm.valid }}</p>
